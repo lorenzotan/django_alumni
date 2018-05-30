@@ -1,6 +1,25 @@
-// https://docs.djangoproject.com/en/2.0/intro/tutorial01/
-1. setup DJango
+// check django version: $ python -m django --version
+// https://docs.djangoproject.com/en/1.11/intro/tutorial01/
+--------------------------------------------------------------------------------
+1. Setup DJango
+--------------------------------------------------------------------------------
 
 $ django-admin startproject [project]
 $ cd [project]
 $ python manage.py startapp [app]
+
+A. add routing to [app] (ref: https://docs.djangoproject.com/en/1.11/intro/tutorial01/)
+
+// create simple view
+$ vi [app]/views.py
+
+// create [app]/urls.py
+$ vi [app]/urls.py
+
+// add [app].urls module to the root URLconf
+$ vi [project]/urls.py
+
+
+--------------------------------------------------------------------------------
+2. Setup Database
+--------------------------------------------------------------------------------
