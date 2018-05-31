@@ -23,3 +23,18 @@ $ vi [project]/urls.py
 --------------------------------------------------------------------------------
 2. Setup Database
 --------------------------------------------------------------------------------
+
+A. create models (ref: https://docs.djangoproject.com/en/1.11/intro/tutorial02/)
+$ vi [app]/models.py
+
+1. add models to settings
+$ vi [project]/settings.py
+ INSTALLED_APPS = [
+    [app].apps.[app class]                          // app class name can be found in [app]/apps.py
+ ]
+
+2. preview database migrations
+$ python manage.py makemigrations [app]
+
+3. run database migrations
+$ python manage.py sqlmigrate [app] [version]       // $ python manage.py sqlmigrate alumni 0001
