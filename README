@@ -8,33 +8,58 @@ $ django-admin startproject [project]
 $ cd [project]
 $ python manage.py startapp [app]
 
-A. add routing to [app] (ref: https://docs.djangoproject.com/en/1.11/intro/tutorial01/)
-
-// create simple view
-$ vi [app]/views.py
-
-// create [app]/urls.py
-$ vi [app]/urls.py
-
-// add [app].urls module to the root URLconf
-$ vi [project]/urls.py
+    A. add routing to [app] (ref: https://docs.djangoproject.com/en/1.11/intro/tutorial01/)
+    
+    // create simple view
+    $ vi [app]/views.py
+    
+    // create [app]/urls.py
+    $ vi [app]/urls.py
+    
+    // add [app].urls module to the root URLconf
+    $ vi [project]/urls.py
 
 
 --------------------------------------------------------------------------------
 2. Setup Database
 --------------------------------------------------------------------------------
 
-A. create models (ref: https://docs.djangoproject.com/en/1.11/intro/tutorial02/)
-$ vi [app]/models.py
+    A. create models (ref: https://docs.djangoproject.com/en/1.11/intro/tutorial02/)
+    $ vi [app]/models.py
+    
+        1. add models to settings
+        $ vi [project]/settings.py
+         INSTALLED_APPS = [
+            [app].apps.[app class]                          // app class name can be found in [app]/apps.py
+         ]
+        
+        2. create database migration
+        $ python manage.py makemigrations [app]
+        
+        3. preview database migrations
+        $ python manage.py sqlmigrate [app] [version]       // $ python manage.py sqlmigrate alumni 0001
+        
+        4. run database migrations
+        $ python manage.py migrate
 
-1. add models to settings
-$ vi [project]/settings.py
- INSTALLED_APPS = [
-    [app].apps.[app class]                          // app class name can be found in [app]/apps.py
- ]
 
-2. preview database migrations
-$ python manage.py makemigrations [app]
+--------------------------------------------------------------------------------
+3. Create Forms
+--------------------------------------------------------------------------------
+    A. create templates (ref: https://docs.djangoproject.com/en/1.11/intro/tutorial03/)
+    $ vi [app]/templates/index.html
+    
+    B. apply template to [app] view
+    
+    C. set up form submission to send data to database
+    // ref: https://docs.djangoproject.com/en/1.11/topics/forms/
+    // ref: https://docs.djangoproject.com/en/1.11/topics/forms/modelforms/         (creating forms from models)
+    // ref: https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Forms
 
-3. run database migrations
-$ python manage.py sqlmigrate [app] [version]       // $ python manage.py sqlmigrate alumni 0001
+
+--------------------------------------------------------------------------------
+4. Create View
+--------------------------------------------------------------------------------
+    A. create template
+    B. apply to view
+    C. pull data from database and display onto view

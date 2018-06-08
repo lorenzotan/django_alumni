@@ -1,0 +1,18 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Student Form</h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <form name="form" action="{% url 'alumni:index' %}" method="POST">
+    {% csrf_token %}
+    <!--input type = "text" placeholder="First Name" name="first_name" />
+    <input type = "text" placeholder="Last Name" name="last_name" />
+    <input type = "text" placeholder="Email Name" name="email" />
+    <input type = "text" placeholder="Phone" name="phone" /-->
+  {{ form.as_p }}
+      <input type="submit" value="Submit" />
+    </form>
+  </body>
+</html>
+

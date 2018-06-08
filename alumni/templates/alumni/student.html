@@ -1,0 +1,13 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h1>Student Form</h1>
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <p><label><b>First Name</b></label>: {{ student.first_name }}</p>
+    <p><label><b>Last Name</b></label>: {{ student.last_name }}</p>
+    <p><label><b>Email</b></label>: {{ student.email }}</p>
+    <p><label><b>Phone</b></label>: {{ student.phone }}</p>
+  </body>
+</html>
+
